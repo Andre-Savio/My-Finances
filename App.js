@@ -1,4 +1,4 @@
-import Home from './scr/pages/Home'
+import Home from './scr/pages/home'
 
 export default function App() {
   return (
