@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacityBase } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { MotiView,} from 'moti'
 
 export default function Balance({saldo, gastos}) {
@@ -28,7 +28,7 @@ export default function Balance({saldo, gastos}) {
 
     >    
             
-            <View style={styles.item}>
+            <TouchableOpacity style={styles.item} onPress={() => setShowBalance(!showBalance)}>
                 <Text style={styles.itemTitle}>Saldo</Text>
                 <View style={styles.content}>
                     <Text style={styles.currencySymbol}>R$</Text>
@@ -38,14 +38,18 @@ export default function Balance({saldo, gastos}) {
                         </View>
                     )}
                 </View>
-            </View>
-            <View style={styles.item}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.item} onPress={() => setShowBalance(!showBalance)}>
                 <Text style={styles.itemTitle}>Gastos</Text>
                 <View style={styles.content}>
                     <Text style={styles.currencySymbol}>R$</Text>
-                    <Text style={styles.expenses}>{gastos}</Text>
+                    { showBalance ? (
+                    <Text style={styles.expenses}>{gastos}</Text>)
+                    : (<View style={styles.skeleton}>
+                        </View>
+                    )}
                 </View>
-            </View>
+            </TouchableOpacity>
 
    </MotiView>
    
