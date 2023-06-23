@@ -1,4 +1,2 @@
 # My-Finances
-# Java Script
-# React-native
-# Gerenciador financeiro pessoal moblie.
+Mobile | Java Script | React-native | Gerenciador financeiro pessoal
